@@ -1,0 +1,44 @@
+---
+title: "UsingRstudioWithGit"
+author: "RUI. GUO"
+date: '2023-10-27'
+output: html_document
+---
+## Install Git
+### Confirm that you installed Git correctly
+git --version # run this in the terminal
+---
+git version 2.33.0
+---
+
+## Configure Git
+### Install package
+```{pkg install}
+install.packages("usethis")
+```
+
+### Tell Git who we are
+```{config}
+#### Use the edit_git_config() function from the usethis package, which will open your gitconfig file. Add your name and email and close this.
+
+library(usethis)
+use_git_config(user.name = "LaneyGUO", user.email = "laneyguo5@163.com")
+
+```
+
+### Initialize a Git Repository
+```{Initialize}
+### The use_git() function will add a Git repository (often referred to as a “repo”) to an existing RStudio project
+
+library(usethis)
+use_git()
+
+### Then choose and input your selection in console to finish initialize
+```
+
+## View Commit History
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
