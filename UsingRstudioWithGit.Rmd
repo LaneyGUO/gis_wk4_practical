@@ -4,14 +4,14 @@ author: "RUI. GUO"
 date: '2023-10-27'
 output: html_document
 ---
-## Install Git
+## 1 Install Git
 ### Confirm that you installed Git correctly
 git --version # run this in the terminal
 ---
 git version 2.33.0
 ---
 
-## Configure Git
+## 2 Configure Git
 ### Install package
 ```{r pkg install}
 install.packages("usethis")
@@ -37,13 +37,45 @@ use_git()
 ```
 
 
-## View Commit History
+## 3 View Commit History
 
 ```{r}
 ### Now that my RStudio project has an associated Git repository, I'll see an extra tab on the top right: the Git tab. From here, I can see the entire history of changes to my code over time (not many yet!).
 ```
 
 ### Make a Commit and View More History
+---
+RStudio has a built-in tool to view your code history. You can click on any commit to see what changed, relative to the previous commit. Lines in green were added; lines in red were deleted.
+---
 ```{r}
-##### RStudio has a built-in tool to view your code history. You can click on any commit to see what changed, relative to the previous commit. Lines in green were added; lines in red were deleted.
+library(tidyverse)
 ```
+
+
+## 4 Connect RStudio and GitHub
+
+### Sign up for Github
+
+### Create a Personal Access Token (PAT) on GitHub
+---
+The best way to connect RStudio and GitHub is using your username and a Personal Access Token (PAT).
+
+To generate a personal access token, use the create_github_token() function from usethis. This will take you to the appropriate page on the GitHub website, where you’ll give your token a name and copy it (don’t lose it because it will never appear again!).
+---
+```{r}
+library(usethis)
+create_github_token()
+## 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
+```
+
+### Store Personal Access Token to Connect RStudio and GitHub
+---
+Now that you’ve created a Personal Access Token, we need to store it so that RStudio can access it and know to connect to your GitHub account.
+
+The gitcreds_set() function from the gitcreds package will help you here. You’ll enter your GitHub username and the Personal Access Token as your password
+---
+```{r}
+library(gitcreds)
+gitcreds_set()
+```
+
