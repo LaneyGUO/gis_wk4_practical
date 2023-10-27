@@ -13,12 +13,12 @@ git version 2.33.0
 
 ## Configure Git
 ### Install package
-```{pkg install}
+```{r pkg install}
 install.packages("usethis")
 ```
 
 ### Tell Git who we are
-```{config}
+```{r config}
 #### Use the edit_git_config() function from the usethis package, which will open your gitconfig file. Add your name and email and close this.
 
 library(usethis)
@@ -27,7 +27,7 @@ use_git_config(user.name = "LaneyGUO", user.email = "laneyguo5@163.com")
 ```
 
 ### Initialize a Git Repository
-```{Initialize}
+```{r}
 ### The use_git() function will add a Git repository (often referred to as a “repo”) to an existing RStudio project
 
 library(usethis)
@@ -36,9 +36,14 @@ use_git()
 ### Then choose and input your selection in console to finish initialize
 ```
 
+
 ## View Commit History
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+### Now that my RStudio project has an associated Git repository, I'll see an extra tab on the top right: the Git tab. From here, I can see the entire history of changes to my code over time (not many yet!).
 ```
 
+### Make a Commit and View More History
+```{r}
+##### RStudio has a built-in tool to view your code history. You can click on any commit to see what changed, relative to the previous commit. Lines in green were added; lines in red were deleted.
+```
