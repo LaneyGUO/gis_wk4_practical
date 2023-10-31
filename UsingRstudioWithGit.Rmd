@@ -79,3 +79,9 @@ library(gitcreds)
 gitcreds_set()
 ```
 
+## 5 Connect RStudio Projects with GitHub Repositories
+### Way 1 - RStudio First
+```{r}
+library(usethis)
+use_github()
+```
